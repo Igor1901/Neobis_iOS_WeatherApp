@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import UIKit
+
+protocol WeatherViewModelType {
+    
+}
+
+class WeatherViewModel: WeatherViewModelType {
+    
+}

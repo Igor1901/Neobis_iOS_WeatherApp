@@ -18,6 +18,9 @@
 		F11D5B2F2B7D5112002D8D1D /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D5B2E2B7D5112002D8D1D /* MainUIView.swift */; };
 		F11D5B332B7DA49D002D8D1D /* Overpass-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F11D5B312B7DA49D002D8D1D /* Overpass-Regular.ttf */; };
 		F11D5B342B7DA49D002D8D1D /* Overpass-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F11D5B322B7DA49D002D8D1D /* Overpass-Bold.ttf */; };
+		F136A0172B7EB06400882BA9 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0162B7EB06400882BA9 /* WeatherModel.swift */; };
+		F136A01A2B7EB13D00882BA9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0192B7EB13D00882BA9 /* Service.swift */; };
+		F136A01D2B80FF8600882BA9 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A01C2B80FF8600882BA9 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		F11D5B2E2B7D5112002D8D1D /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
 		F11D5B312B7DA49D002D8D1D /* Overpass-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-Regular.ttf"; sourceTree = "<group>"; };
 		F11D5B322B7DA49D002D8D1D /* Overpass-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-Bold.ttf"; sourceTree = "<group>"; };
+		F136A0162B7EB06400882BA9 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		F136A0192B7EB13D00882BA9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F136A01C2B80FF8600882BA9 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +72,14 @@
 		F11D5B102B7CF71C002D8D1D /* Neobis_iOS_WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				F11D5B302B7DA414002D8D1D /* Fonts */,
 				F11D5B112B7CF71C002D8D1D /* AppDelegate.swift */,
 				F11D5B132B7CF71C002D8D1D /* SceneDelegate.swift */,
+				F136A0152B7EB04800882BA9 /* Model */,
 				F11D5B2D2B7D50F3002D8D1D /* Views */,
+				F136A01B2B80FF6600882BA9 /* ViewModel */,
+				F136A0182B7EB12800882BA9 /* Service */,
 				F11D5B2A2B7D507C002D8D1D /* Utils */,
+				F11D5B302B7DA414002D8D1D /* Fonts */,
 				F11D5B1A2B7CF71F002D8D1D /* Assets.xcassets */,
 				F11D5B1C2B7CF71F002D8D1D /* LaunchScreen.storyboard */,
 				F11D5B1F2B7CF71F002D8D1D /* Info.plist */,
@@ -102,6 +111,30 @@
 				F11D5B312B7DA49D002D8D1D /* Overpass-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F136A0152B7EB04800882BA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F136A0162B7EB06400882BA9 /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F136A0182B7EB12800882BA9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F136A0192B7EB13D00882BA9 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F136A01B2B80FF6600882BA9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F136A01C2B80FF8600882BA9 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,9 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11D5B162B7CF71C002D8D1D /* WeatherViewController.swift in Sources */,
+				F136A01A2B7EB13D00882BA9 /* Service.swift in Sources */,
 				F11D5B122B7CF71C002D8D1D /* AppDelegate.swift in Sources */,
 				F11D5B2F2B7D5112002D8D1D /* MainUIView.swift in Sources */,
 				F11D5B142B7CF71C002D8D1D /* SceneDelegate.swift in Sources */,
+				F136A01D2B80FF8600882BA9 /* WeatherViewModel.swift in Sources */,
+				F136A0172B7EB06400882BA9 /* WeatherModel.swift in Sources */,
 				F11D5B2C2B7D5090002D8D1D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
