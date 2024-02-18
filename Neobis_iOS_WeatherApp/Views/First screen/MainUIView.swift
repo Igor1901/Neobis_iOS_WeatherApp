@@ -90,7 +90,7 @@ class MainUIView: UIView {
         let label = UILabel()
         label.text = "22°"
         label.addBigShadow()
-        label.font = UIFont(name: "Overpass-Regular", size: 100)
+        label.font = UIFont(name: "Overpass-Regular", size: 50)
         label.textColor = .white
         return label
     }()
@@ -342,10 +342,10 @@ class MainUIView: UIView {
     
     func fillData(with data: Weather) {
         
-        let temperatureInC = Int(data.main.temp - 273)
+        //let temperatureInC = Int(data.main.temp - 273)
         
         сityLabel.text = data.name
-        temperatureLabel.text = "\(temperatureInC)°C"
+        temperatureLabel.text = "\(data.main.temp)°C"
         //countryLabel.text = "\(data.sys.country)"
         windLabel.text = "\(data.wind.speed) m/s"
         //visibility1.text = "\(data.visibility) meters"

@@ -54,9 +54,19 @@ class WeatherViewController: UIViewController {
         
         // Вызываем метод fetchWeatherData для загрузки данных
         weatherViewModel.fetchWeatherData(cityName: "Marbella")
+        setupConstraints()
 
     }
 
+    func setupConstraints(){
+        mainView.weatherButton.addTarget(self, action: #selector(weatherButtonPressed), for: .touchUpInside)
+    }
+
+    @objc func weatherButtonPressed() {
+        let vc = SecondWeatherViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 
 }
 
