@@ -339,6 +339,19 @@ class MainUIView: UIView {
         }
 
     }
-    
+    /*
+    func fillData(with data: Weather) {
+        
+        let temperatureInC = Int(data.main.temp - 273.15)
+        
+        сityLabel.text = data.name
+        temperatureLabel.text = "\(temperatureInC)°C"
+        //countryLabel.text = "\(data.sys.country)"
+        windLabel.text = "\(data.wind.speed) m/s"
+        //visibility1.text = "\(data.visibility) meters"
+        rainLabel.text = "\(data.main.humidity)%"
+        //airPressure1.text = "\(data.main.pressure) hPa"
+    }
+    */
     
 }

@@ -19,7 +19,7 @@
 		F11D5B332B7DA49D002D8D1D /* Overpass-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F11D5B312B7DA49D002D8D1D /* Overpass-Regular.ttf */; };
 		F11D5B342B7DA49D002D8D1D /* Overpass-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F11D5B322B7DA49D002D8D1D /* Overpass-Bold.ttf */; };
 		F136A0172B7EB06400882BA9 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0162B7EB06400882BA9 /* WeatherModel.swift */; };
-		F136A01A2B7EB13D00882BA9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0192B7EB13D00882BA9 /* Service.swift */; };
+		F136A01A2B7EB13D00882BA9 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0192B7EB13D00882BA9 /* WeatherService.swift */; };
 		F136A01D2B80FF8600882BA9 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A01C2B80FF8600882BA9 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		F11D5B312B7DA49D002D8D1D /* Overpass-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-Regular.ttf"; sourceTree = "<group>"; };
 		F11D5B322B7DA49D002D8D1D /* Overpass-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overpass-Bold.ttf"; sourceTree = "<group>"; };
 		F136A0162B7EB06400882BA9 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
-		F136A0192B7EB13D00882BA9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F136A0192B7EB13D00882BA9 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		F136A01C2B80FF8600882BA9 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,7 +124,7 @@
 		F136A0182B7EB12800882BA9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				F136A0192B7EB13D00882BA9 /* Service.swift */,
+				F136A0192B7EB13D00882BA9 /* WeatherService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11D5B162B7CF71C002D8D1D /* WeatherViewController.swift in Sources */,
-				F136A01A2B7EB13D00882BA9 /* Service.swift in Sources */,
+				F136A01A2B7EB13D00882BA9 /* WeatherService.swift in Sources */,
 				F11D5B122B7CF71C002D8D1D /* AppDelegate.swift in Sources */,
 				F11D5B2F2B7D5112002D8D1D /* MainUIView.swift in Sources */,
 				F11D5B142B7CF71C002D8D1D /* SceneDelegate.swift in Sources */,
