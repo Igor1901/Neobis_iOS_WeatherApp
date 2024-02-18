@@ -339,10 +339,10 @@ class MainUIView: UIView {
         }
 
     }
-    /*
+    
     func fillData(with data: Weather) {
         
-        let temperatureInC = Int(data.main.temp - 273.15)
+        let temperatureInC = Int(data.main.temp - 273)
         
         сityLabel.text = data.name
         temperatureLabel.text = "\(temperatureInC)°C"
@@ -352,6 +352,6 @@ class MainUIView: UIView {
         rainLabel.text = "\(data.main.humidity)%"
         //airPressure1.text = "\(data.main.pressure) hPa"
     }
-    */
+    
     
 }
