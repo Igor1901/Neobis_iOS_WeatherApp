@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class WeatherTableViewCell: UITableViewCell {
     // Define your custom UI components here
@@ -46,20 +47,22 @@ class WeatherTableViewCell: UITableViewCell {
         contentView.addSubview(tempLabel)
         contentView.addSubview(imgView)
         
-        [dateLabel, tempLabel, imgView].forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
+        dateLabel.snp.makeConstraints { make in
+            make.leading.equalTo(contentView.snp.leading)
+            make.centerY.equalTo(contentView.snp.centerY)
+        }
         
-        NSLayoutConstraint.activate([
-            dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            dateLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            
-            tempLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            tempLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            
-            imgView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            imgView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            imgView.heightAnchor.constraint(equalToConstant: 70),
-            imgView.widthAnchor.constraint(equalToConstant: 80),
-        ])
+        tempLabel.snp.makeConstraints { make in
+            make.trailing.equalTo(contentView.snp.trailing)
+            make.centerY.equalTo(contentView.snp.centerY)
+        }
+        
+        imgView.snp.makeConstraints { make in
+            make.centerX.equalTo(contentView.snp.centerX)
+            make.centerY.equalTo(contentView.snp.centerY)
+            make.height.equalTo(70)
+            make.width.equalTo(80)
+        }
     }
     
     func configure(image: String, dateText: String, tempText: String) {

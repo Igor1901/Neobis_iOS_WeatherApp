@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class WeatherCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
@@ -44,25 +45,27 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         selectedView.addSubview(imageView)
         selectedView.addSubview(hourLabel)
         contentView.addSubview(selectedView)
-        [imageView, tempretureLabel, hourLabel, selectedView].forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
         
-        NSLayoutConstraint.activate([
-            selectedView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            selectedView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            selectedView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            selectedView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            
-            tempretureLabel.centerXAnchor.constraint(equalTo: selectedView.centerXAnchor),
-            tempretureLabel.topAnchor.constraint(equalTo: selectedView.topAnchor, constant: 13),
-            
-            imageView.centerXAnchor.constraint(equalTo: selectedView.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: selectedView.centerYAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 90),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            
-            hourLabel.centerXAnchor.constraint(equalTo: selectedView.centerXAnchor),
-            hourLabel.bottomAnchor.constraint(equalTo: selectedView.bottomAnchor, constant: -13),
-        ])
+        selectedView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        tempretureLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(selectedView.snp.centerX)
+            make.top.equalTo(selectedView.snp.top).offset(13)
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.centerX.equalTo(selectedView.snp.centerX)
+            make.centerY.equalTo(selectedView.snp.centerY)
+            make.height.equalTo(90)
+            make.width.equalTo(100)
+        }
+        
+        hourLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(selectedView.snp.centerX)
+            make.bottom.equalTo(selectedView.snp.bottom).offset(-13)
+        }
     }
     
     func configure(image: String, tempText: String, hourText: String,showBorder: Bool) {

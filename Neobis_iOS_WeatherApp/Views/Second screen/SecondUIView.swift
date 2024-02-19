@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SecondUIView: UIView {
 
@@ -211,96 +212,130 @@ class SecondUIView: UIView {
         weatherConditionView.addSubview(sunImage)
         weatherConditionView.addSubview(weatherConditionLabel)
         
-        [backButton, backLabel, backImage, settingImage, line1, line2, dateView, firstDateLabel, secondDateLabel,
-         collectionView, weekTitleView, weekTitleLabel, calendarImage, scrollViewFill, scrollViewBorder, tableView, weatherConditionView, sunImage, weatherConditionLabel].forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
+        
     
-        NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: topAnchor, constant: 52),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            backButton.widthAnchor.constraint(equalToConstant: 95),
-            backButton.heightAnchor.constraint(equalToConstant: 37),
-            
-            backLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
-            backLabel.trailingAnchor.constraint(equalTo: backButton.trailingAnchor),
-            
-            backImage.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
-            backImage.leadingAnchor.constraint(equalTo: backButton.leadingAnchor),
-            backImage.heightAnchor.constraint(equalToConstant: 17),
-            backImage.widthAnchor.constraint(equalToConstant: 11),
-            
-            settingImage.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
-            settingImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            settingImage.heightAnchor.constraint(equalToConstant: 24),
-            settingImage.widthAnchor.constraint(equalToConstant: 24),
-            
-            
-            line1.widthAnchor.constraint(equalToConstant: 112),
-            line1.heightAnchor.constraint(equalToConstant: 235),
-            line1.topAnchor.constraint(equalTo: topAnchor, constant: 92),
-            line1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -25),
-            
-            line2.widthAnchor.constraint(equalToConstant: 425),
-            line2.heightAnchor.constraint(equalToConstant: 366.5),
-            line2.topAnchor.constraint(equalTo: topAnchor, constant: -54),
-            line2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 70),
-            
-            
-            dateView.topAnchor.constraint(equalTo: backImage.bottomAnchor, constant: 49),
-            dateView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            dateView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -23),
-            
-            firstDateLabel.centerYAnchor.constraint(equalTo: dateView.centerYAnchor),
-            firstDateLabel.leadingAnchor.constraint(equalTo: dateView.leadingAnchor),
-            
-            secondDateLabel.centerYAnchor.constraint(equalTo: dateView.centerYAnchor),
-            secondDateLabel.trailingAnchor.constraint(equalTo: dateView.trailingAnchor),
-                
-            collectionView.topAnchor.constraint(equalTo: dateView.bottomAnchor, constant: 32),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 155),
-            
-            weekTitleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            weekTitleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            weekTitleView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 50),
-            weekTitleView.heightAnchor.constraint(equalToConstant: 37),
-            
-            weekTitleLabel.centerYAnchor.constraint(equalTo: weekTitleView.centerYAnchor),
-            weekTitleLabel.leadingAnchor.constraint(equalTo: weekTitleView.leadingAnchor),
-            
-            calendarImage.centerYAnchor.constraint(equalTo: weekTitleView.centerYAnchor),
-            calendarImage.trailingAnchor.constraint(equalTo: weekTitleView.trailingAnchor),
-            calendarImage.heightAnchor.constraint(equalToConstant: 24),
-            calendarImage.widthAnchor.constraint(equalToConstant: 24),
-            
-            scrollViewBorder.topAnchor.constraint(equalTo: calendarImage.bottomAnchor, constant: 44),
-            scrollViewBorder.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            scrollViewBorder.heightAnchor.constraint(equalToConstant: 294),
-            scrollViewBorder.widthAnchor.constraint(equalToConstant: 6),
-            
-            scrollViewFill.topAnchor.constraint(equalTo: scrollViewBorder.topAnchor),
-            scrollViewFill.centerXAnchor.constraint(equalTo: scrollViewBorder.centerXAnchor),
-            scrollViewFill.heightAnchor.constraint(equalToConstant: 138),
-            scrollViewFill.widthAnchor.constraint(equalToConstant: 6),
-            
-            tableView.topAnchor.constraint(equalTo: weekTitleView.bottomAnchor, constant: 20),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            tableView.trailingAnchor.constraint(equalTo: scrollViewBorder.leadingAnchor, constant: -20),
-            tableView.heightAnchor.constraint(equalToConstant: 312),
-            
-            weatherConditionView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            weatherConditionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28),
-            weatherConditionView.heightAnchor.constraint(equalToConstant: 28),
-            weatherConditionView.widthAnchor.constraint(equalToConstant: 148),
-            
-            sunImage.leadingAnchor.constraint(equalTo: weatherConditionView.leadingAnchor),
-            sunImage.centerYAnchor.constraint(equalTo: weatherConditionView.centerYAnchor),
-            sunImage.heightAnchor.constraint(equalToConstant: 24),
-            sunImage.widthAnchor.constraint(equalToConstant: 24),
-            
-            weatherConditionLabel.trailingAnchor.constraint(equalTo: weatherConditionView.trailingAnchor),
-            weatherConditionLabel.centerYAnchor.constraint(equalTo: weatherConditionView.centerYAnchor),
-        ])
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(snp.top).offset(52)
+            make.leading.equalTo(snp.leading).offset(32)
+            make.width.equalTo(95)
+            make.height.equalTo(37)
+        }
+
+        backLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(backButton.snp.centerY)
+            make.trailing.equalTo(backButton.snp.trailing)
+        }
+
+        backImage.snp.makeConstraints { make in
+            make.centerY.equalTo(backButton.snp.centerY)
+            make.leading.equalTo(backButton.snp.leading)
+            make.height.equalTo(17)
+            make.width.equalTo(11)
+        }
+
+        settingImage.snp.makeConstraints { make in
+            make.centerY.equalTo(backButton.snp.centerY)
+            make.trailing.equalTo(snp.trailing).offset(-30)
+            make.height.equalTo(24)
+            make.width.equalTo(24)
+        }
+
+        line1.snp.makeConstraints { make in
+            make.width.equalTo(112)
+            make.height.equalTo(235)
+            make.top.equalTo(snp.top).offset(92)
+            make.leading.equalTo(snp.leading).offset(-25)
+        }
+
+        line2.snp.makeConstraints { make in
+            make.width.equalTo(425)
+            make.height.equalTo(366.5)
+            make.top.equalTo(snp.top).offset(-54)
+            make.trailing.equalTo(snp.trailing).offset(70)
+        }
+
+        dateView.snp.makeConstraints { make in
+            make.top.equalTo(backImage.snp.bottom).offset(49)
+            make.leading.equalTo(snp.leading).offset(30)
+            make.trailing.equalTo(snp.trailing).offset(-23)
+        }
+
+        firstDateLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(dateView.snp.centerY)
+            make.leading.equalTo(dateView.snp.leading)
+        }
+
+        secondDateLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(dateView.snp.centerY)
+            make.trailing.equalTo(dateView.snp.trailing)
+        }
+
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(dateView.snp.bottom).offset(32)
+            make.leading.equalTo(snp.leading)
+            make.trailing.equalTo(snp.trailing)
+            make.height.equalTo(155)
+        }
+
+        weekTitleView.snp.makeConstraints { make in
+            make.leading.equalTo(snp.leading).offset(30)
+            make.trailing.equalTo(snp.trailing).offset(-30)
+            make.top.equalTo(collectionView.snp.bottom).offset(50)
+            make.height.equalTo(37)
+        }
+
+        weekTitleLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(weekTitleView.snp.centerY)
+            make.leading.equalTo(weekTitleView.snp.leading)
+        }
+
+        calendarImage.snp.makeConstraints { make in
+            make.centerY.equalTo(weekTitleView.snp.centerY)
+            make.trailing.equalTo(weekTitleView.snp.trailing)
+            make.height.equalTo(24)
+            make.width.equalTo(24)
+        }
+
+        scrollViewBorder.snp.makeConstraints { make in
+            make.top.equalTo(calendarImage.snp.bottom).offset(44)
+            make.trailing.equalTo(snp.trailing).offset(-30)
+            make.height.equalTo(294)
+            make.width.equalTo(6)
+        }
+
+        scrollViewFill.snp.makeConstraints { make in
+            make.top.equalTo(scrollViewBorder.snp.top)
+            make.centerX.equalTo(scrollViewBorder.snp.centerX)
+            make.height.equalTo(138)
+            make.width.equalTo(6)
+        }
+
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(weekTitleView.snp.bottom).offset(20)
+            make.leading.equalTo(snp.leading).offset(30)
+            make.trailing.equalTo(scrollViewBorder.snp.leading).offset(-20)
+            make.height.equalTo(312)
+        }
+
+        weatherConditionView.snp.makeConstraints { make in
+            make.centerX.equalTo(snp.centerX)
+            make.bottom.equalTo(snp.bottom).offset(-28)
+            make.height.equalTo(28)
+            make.width.equalTo(148)
+        }
+
+        sunImage.snp.makeConstraints { make in
+            make.leading.equalTo(weatherConditionView.snp.leading)
+            make.centerY.equalTo(weatherConditionView.snp.centerY)
+            make.height.equalTo(24)
+            make.width.equalTo(24)
+        }
+
+        weatherConditionLabel.snp.makeConstraints { make in
+            make.trailing.equalTo(weatherConditionView.snp.trailing)
+            make.centerY.equalTo(weatherConditionView.snp.centerY)
+        }
+
     }
     
 }
