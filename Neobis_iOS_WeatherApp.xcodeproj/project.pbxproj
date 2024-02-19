@@ -25,6 +25,7 @@
 		F136A06A2B823F6B00882BA9 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0692B823F6B00882BA9 /* WeatherTableViewCell.swift */; };
 		F136A06C2B823F9600882BA9 /* SecondWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A06B2B823F9600882BA9 /* SecondWeatherViewController.swift */; };
 		F136A06E2B823FF700882BA9 /* WeekWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */; };
+		F136A0742B8397AF00882BA9 /* SecondUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0732B8397AF00882BA9 /* SecondUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		F136A0692B823F6B00882BA9 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		F136A06B2B823F9600882BA9 /* SecondWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWeatherViewController.swift; sourceTree = "<group>"; };
 		F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherModel.swift; sourceTree = "<group>"; };
+		F136A0732B8397AF00882BA9 /* SecondUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				F136A0662B823F4400882BA9 /* CuctomCells */,
 				F136A06B2B823F9600882BA9 /* SecondWeatherViewController.swift */,
+				F136A0732B8397AF00882BA9 /* SecondUIView.swift */,
 			);
 			path = "Second screen";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F136A06C2B823F9600882BA9 /* SecondWeatherViewController.swift in Sources */,
+				F136A0742B8397AF00882BA9 /* SecondUIView.swift in Sources */,
 				F136A06A2B823F6B00882BA9 /* WeatherTableViewCell.swift in Sources */,
 				F136A06E2B823FF700882BA9 /* WeekWeatherModel.swift in Sources */,
 				F136A0682B823F5500882BA9 /* WeatherCollectionViewCell.swift in Sources */,
