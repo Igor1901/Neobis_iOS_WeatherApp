@@ -12,7 +12,7 @@ class WeatherViewController: UIViewController {
 
     let mainView = MainUIView()
     
-    var weatherModel: Weather?
+    var weatherModel: WeatherModel?
     
     var weatherViewModel: WeatherViewModelType!
 
@@ -63,7 +63,7 @@ class WeatherViewController: UIViewController {
     }
 
     @objc func weatherButtonPressed() {
-        let vc = SecondWeatherViewController()
+        let vc = SecondWeatherViewController(weatherViewModel)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }

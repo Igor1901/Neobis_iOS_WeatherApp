@@ -65,11 +65,13 @@ class WeatherTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(image: String, dateText: String, tempText: String) {
-        dateLabel.text = dateText
-        tempLabel.text = tempText
+    func configureData(weekDay: String, image: String, temp: String) {
+        self.dateLabel.text = weekDay
         imgView.image = UIImage(named: image)
+        tempLabel.text = temp
     }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct WeatherModel {
-    let temp: String
+struct WeekWeatherModel: Codable {
+    let temp: Int
     let image: String
-    let time: String
+    let weekDay: String
 }
