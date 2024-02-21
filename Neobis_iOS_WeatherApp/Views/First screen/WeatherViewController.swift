@@ -32,7 +32,6 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Присваиваем замыкание weatherViewModel.updateSearch
         weatherViewModel.updateSearch = { [weak self] weather in
             DispatchQueue.main.async { // Обновление интерфейса должно происходить на основном потоке
@@ -40,11 +39,32 @@ class WeatherViewController: UIViewController {
                 print("Received updated weather data:", weather)
             }
         }
-        
+        setupNavigationBar()
+
         // Вызываем метод fetchWeatherData для загрузки данных
         weatherViewModel.fetchWeatherData(cityName: "Marbella")
         setupConstraints()
 
+    }
+    
+    func setupNavigationBar() {
+
+        // Создаем UIBarButtonItem с customView в качестве cityView
+        let leftBarButtonItem = UIBarButtonItem(customView: mainView.cityView)
+
+        // Добавляем leftBarButtonItem в левую часть навигационного бара
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+    
+    
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
+        navigationItem.rightBarButtonItem = searchButton
+            
+    }
+    
+    @objc func searchTapped() {
+        let vc = SearchViewController(vm: weatherViewModel, mainViewController: self)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     func fillData(with data: WeatherModel) {

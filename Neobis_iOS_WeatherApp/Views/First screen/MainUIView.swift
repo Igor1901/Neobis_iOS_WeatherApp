@@ -55,13 +55,6 @@ class MainUIView: UIView {
     
     let cityView: UIView = UIView()
 
-    let notificationImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "notification")
-        image.contentMode = .scaleAspectFill
-        return image
-    }()
-    
     let sunImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "sun")
@@ -199,7 +192,6 @@ class MainUIView: UIView {
         cityView.addSubview(pointImage)
         cityView.addSubview(сityLabel)
         cityView.addSubview(downArrow)
-        addSubview(notificationImage)
         addSubview(sunImage)
         addSubview(contentView)
         contentView.addSubview(dateLabel)
@@ -210,7 +202,6 @@ class MainUIView: UIView {
         infoView.addSubview(rainImage)
         infoView.addSubview(windLabel)
         infoView.addSubview(rainLabel)
-        
         addSubview(weatherButton)
         weatherButton.addSubview(buttonLable)
         weatherButton.addSubview(arrowTop)
@@ -254,14 +245,7 @@ class MainUIView: UIView {
             make.centerY.equalTo(cityView.snp.centerY)
             make.trailing.equalTo(cityView.snp.trailing)
         }
-
-        notificationImage.snp.makeConstraints { make in
-            make.width.equalTo(26)
-            make.height.equalTo(24)
-            make.centerY.equalTo(cityView.snp.centerY)
-            make.trailing.equalToSuperview().offset(-30)
-        }
-
+        
         sunImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(70)
             make.width.equalTo(300)
@@ -338,10 +322,5 @@ class MainUIView: UIView {
             make.centerY.equalTo(weatherButton.snp.centerY)
             make.trailing.equalTo(weatherButton.snp.trailing).offset(-23)
         }
-
     }
-    
-
-    
-    
 }

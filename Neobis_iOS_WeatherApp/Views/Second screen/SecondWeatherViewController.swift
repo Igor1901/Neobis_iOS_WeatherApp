@@ -44,6 +44,7 @@ class SecondWeatherViewController: UIViewController {
             DispatchQueue.main.async { // Обновление интерфейса должно происходить на
                 // Обновляем таблицу после получения новых данных
                 self?.secondView.tableView.reloadData()
+                self?.secondView.collectionView.reloadData()
             }
             
         }
@@ -64,7 +65,7 @@ extension SecondWeatherViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("тут вывод первых 5и",viewModel.firstFiveWeather)
-        return viewModel.firstFiveWeather.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
