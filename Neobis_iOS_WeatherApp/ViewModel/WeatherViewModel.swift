@@ -88,11 +88,11 @@ class WeatherViewModel: WeatherViewModelType {
     
     
     func getFirstFiveWeatherInfo(model: WeatherModel) -> [FirstFiveWeatherModel] {
-        var weatherInfo: [FirstFiveWeatherModel] = []
+
         
         guard let weatherList = model.list else {
             print("Weather list is nil")
-            return weatherInfo
+            return firstFiveWeather
         }
         
         let sortedWeatherList = weatherList.sorted { $0.dt_txt < $1.dt_txt }
@@ -113,11 +113,11 @@ class WeatherViewModel: WeatherViewModelType {
             let icon = weatherDetail.weather.first?.icon ?? ""
             
             let weatherModel = FirstFiveWeatherModel(time: time, temp: temperature, icon: icon)
-            weatherInfo.append(weatherModel)
+            firstFiveWeather.append(weatherModel)
         }
         
-        print("First five weather info: \(weatherInfo)")
-        return weatherInfo
+        print("First five weather info: \(firstFiveWeather)")
+        return firstFiveWeather
     }
 
 

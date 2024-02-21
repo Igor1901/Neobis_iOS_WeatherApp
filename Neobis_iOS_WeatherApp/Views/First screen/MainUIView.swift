@@ -10,7 +10,6 @@ import SnapKit
 
 class MainUIView: UIView {
 
-    let viewModel = WeatherViewModel()
     
     let gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
@@ -88,7 +87,7 @@ class MainUIView: UIView {
         return label
     }()
     
-    private lazy var temperatureLabel: UILabel = {
+    lazy var temperatureLabel: UILabel = {
         let label = UILabel()
         label.text = "22°"
         label.addBigShadow()
@@ -342,18 +341,7 @@ class MainUIView: UIView {
 
     }
     
-    func fillData(with data: WeatherModel) {
-        
-        сityLabel.text = data.city.name
-        sunImage.image = UIImage(named: data.list?[0].weather[0].icon ?? "sun")
-        dateLabel.text = "\(viewModel.convertDateString(data.list?[0].dt_txt ?? "26 Апреля"))"
-        
-        temperatureLabel.text = "\(Int(round(data.list?[0].main.temp ?? 0)))°C"
-        titleLabel.text =  data.list?[0].weather[0].main ?? "Солнечно"
-        
-        windLabel.text = "Wind | \(Int(round(data.list?[0].wind.speed ?? 0))) m/s"
-        rainLabel.text = "Humidity | \(data.list?[0].main.humidity ?? 0) %"
-    }
+
     
     
 }

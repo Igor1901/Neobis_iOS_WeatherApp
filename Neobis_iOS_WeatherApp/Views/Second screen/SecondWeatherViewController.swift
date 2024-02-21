@@ -10,13 +10,7 @@ import SnapKit
 
 class SecondWeatherViewController: UIViewController {
     
-    let hourlyWeather1 = [
-        hourlyWeather(temp: "29°C", image: "sunAndClouds", time: "15:00"),
-        hourlyWeather(temp: "26°C", image: "sunAndClouds", time: "16:00"),
-        hourlyWeather(temp: "24°C", image: "clouds", time: "17:00"),
-        hourlyWeather(temp: "23°C", image: "cloudsWithMoon", time: "18:00"),
-        hourlyWeather(temp: "22°C", image: "cloudsWithMoon", time: "19:00"),
-    ]
+
 
     var viewModel: WeatherViewModelType!
     let secondView = SecondUIView()
@@ -69,14 +63,14 @@ class SecondWeatherViewController: UIViewController {
 extension SecondWeatherViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(viewModel.firstFiveWeather)
-        return hourlyWeather1.count
+        print("тут вывод первых 5и",viewModel.firstFiveWeather)
+        return viewModel.firstFiveWeather.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! WeatherCollectionViewCell
-        let temp = hourlyWeather1[indexPath.row]
-        cell.configure(image: temp.image, tempText: temp.temp, hourText: temp.time)
+        let temp = viewModel.firstFiveWeather[indexPath.row]
+        cell.configureData(weekDay: temp.time, image: temp.icon, temp: "\(temp.temp) °C")
         return cell
     }
 }

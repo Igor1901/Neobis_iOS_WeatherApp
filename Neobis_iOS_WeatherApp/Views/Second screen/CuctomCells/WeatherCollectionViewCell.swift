@@ -68,12 +68,11 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(image: String, tempText: String, hourText: String ) {
+
+    func configureData(weekDay: String, image: String, temp: String) {
+        self.hourLabel.text = weekDay
         imageView.image = UIImage(named: image)
-        tempretureLabel.text = tempText
-        hourLabel.text = hourText
-        
-       
+        tempretureLabel.text = temp
     }
     
     required init?(coder aDecoder: NSCoder) {

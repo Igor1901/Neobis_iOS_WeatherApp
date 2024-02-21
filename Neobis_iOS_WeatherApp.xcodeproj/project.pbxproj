@@ -26,7 +26,6 @@
 		F136A06C2B823F9600882BA9 /* SecondWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A06B2B823F9600882BA9 /* SecondWeatherViewController.swift */; };
 		F136A06E2B823FF700882BA9 /* WeekWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */; };
 		F136A0742B8397AF00882BA9 /* SecondUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0732B8397AF00882BA9 /* SecondUIView.swift */; };
-		F136A0762B8460BB00882BA9 /* ModelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0752B8460BB00882BA9 /* ModelModel.swift */; };
 		F136A0782B8504B400882BA9 /* FirstFiveWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0772B8504B400882BA9 /* FirstFiveWeatherModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		F136A06B2B823F9600882BA9 /* SecondWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWeatherViewController.swift; sourceTree = "<group>"; };
 		F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherModel.swift; sourceTree = "<group>"; };
 		F136A0732B8397AF00882BA9 /* SecondUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondUIView.swift; sourceTree = "<group>"; };
-		F136A0752B8460BB00882BA9 /* ModelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelModel.swift; sourceTree = "<group>"; };
 		F136A0772B8504B400882BA9 /* FirstFiveWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFiveWeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +130,6 @@
 			children = (
 				F136A0162B7EB06400882BA9 /* WeatherModel.swift */,
 				F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */,
-				F136A0752B8460BB00882BA9 /* ModelModel.swift */,
 				F136A0772B8504B400882BA9 /* FirstFiveWeatherModel.swift */,
 			);
 			path = Model;
@@ -275,7 +272,6 @@
 				F136A01D2B80FF8600882BA9 /* WeatherViewModel.swift in Sources */,
 				F136A0172B7EB06400882BA9 /* WeatherModel.swift in Sources */,
 				F11D5B2C2B7D5090002D8D1D /* Extensions.swift in Sources */,
-				F136A0762B8460BB00882BA9 /* ModelModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
