@@ -68,17 +68,12 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(image: String, tempText: String, hourText: String,showBorder: Bool) {
+    func configure(image: String, tempText: String, hourText: String ) {
         imageView.image = UIImage(named: image)
         tempretureLabel.text = tempText
         hourLabel.text = hourText
         
-        if showBorder {
-            selectedView.backgroundColor = UIColor(hex: "#FFFFFF", alpha: 0.3)
-            selectedView.layer.cornerRadius = 20
-            selectedView.layer.borderWidth = 1
-            selectedView.layer.borderColor = UIColor.white.cgColor
-        }
+       
     }
     
     required init?(coder aDecoder: NSCoder) {

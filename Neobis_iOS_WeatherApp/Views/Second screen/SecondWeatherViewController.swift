@@ -17,15 +17,7 @@ class SecondWeatherViewController: UIViewController {
         hourlyWeather(temp: "23°C", image: "cloudsWithMoon", time: "18:00"),
         hourlyWeather(temp: "22°C", image: "cloudsWithMoon", time: "19:00"),
     ]
-    /*
-    let weeklyWeather = [
-        WeekWeatherModel(temp: "21°C", image: "rainy", time: "Апр, 27"),
-        WeekWeatherModel(temp: "22°C", image: "rainyCloud", time: "Апр, 28"),
-        WeekWeatherModel(temp: "34°C", image: "sun1", time: "Апр, 29"),
-        WeekWeatherModel(temp: "27°C", image: "cloudy", time: "Апр, 30"),
-        WeekWeatherModel(temp: "32°C", image: "sunAndClouds", time: "Май, 1"),
-    ]
-*/
+
     var viewModel: WeatherViewModelType!
     let secondView = SecondUIView()
     
@@ -64,9 +56,6 @@ class SecondWeatherViewController: UIViewController {
         setTargets()
     }
     
-    
-
-    
     func setTargets() {
         secondView.backButton.addTarget(self, action: #selector(backPressed), for: .touchUpInside)
     }
@@ -80,13 +69,14 @@ class SecondWeatherViewController: UIViewController {
 extension SecondWeatherViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(viewModel.firstFiveWeather)
         return hourlyWeather1.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! WeatherCollectionViewCell
         let temp = hourlyWeather1[indexPath.row]
-        cell.configure(image: temp.image, tempText: temp.temp, hourText: temp.time, showBorder: (temp.temp == "24°C"))
+        cell.configure(image: temp.image, tempText: temp.temp, hourText: temp.time)
         return cell
     }
 }

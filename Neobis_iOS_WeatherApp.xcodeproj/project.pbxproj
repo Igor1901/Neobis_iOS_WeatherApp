@@ -27,6 +27,7 @@
 		F136A06E2B823FF700882BA9 /* WeekWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */; };
 		F136A0742B8397AF00882BA9 /* SecondUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0732B8397AF00882BA9 /* SecondUIView.swift */; };
 		F136A0762B8460BB00882BA9 /* ModelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0752B8460BB00882BA9 /* ModelModel.swift */; };
+		F136A0782B8504B400882BA9 /* FirstFiveWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F136A0772B8504B400882BA9 /* FirstFiveWeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherModel.swift; sourceTree = "<group>"; };
 		F136A0732B8397AF00882BA9 /* SecondUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondUIView.swift; sourceTree = "<group>"; };
 		F136A0752B8460BB00882BA9 /* ModelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelModel.swift; sourceTree = "<group>"; };
+		F136A0772B8504B400882BA9 /* FirstFiveWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFiveWeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				F136A0162B7EB06400882BA9 /* WeatherModel.swift */,
 				F136A06D2B823FF700882BA9 /* WeekWeatherModel.swift */,
 				F136A0752B8460BB00882BA9 /* ModelModel.swift */,
+				F136A0772B8504B400882BA9 /* FirstFiveWeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				F136A06C2B823F9600882BA9 /* SecondWeatherViewController.swift in Sources */,
 				F136A0742B8397AF00882BA9 /* SecondUIView.swift in Sources */,
+				F136A0782B8504B400882BA9 /* FirstFiveWeatherModel.swift in Sources */,
 				F136A06A2B823F6B00882BA9 /* WeatherTableViewCell.swift in Sources */,
 				F136A06E2B823FF700882BA9 /* WeekWeatherModel.swift in Sources */,
 				F136A0682B823F5500882BA9 /* WeatherCollectionViewCell.swift in Sources */,

@@ -344,8 +344,6 @@ class MainUIView: UIView {
     
     func fillData(with data: WeatherModel) {
         
-        //let temperatureInC = Int(data.main.temp - 273)
-        
         сityLabel.text = data.city.name
         sunImage.image = UIImage(named: data.list?[0].weather[0].icon ?? "sun")
         dateLabel.text = "\(viewModel.convertDateString(data.list?[0].dt_txt ?? "26 Апреля"))"

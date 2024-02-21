@@ -9,22 +9,24 @@ import Foundation
 import UIKit
 
 protocol WeatherViewModelType {
-    
-    //var didTapSearch: (() -> Void)? { get set }
-    
+
     var weekWeather: [WeekWeatherModel] { get set }
     
+    var firstFiveWeather: [FirstFiveWeatherModel] { get set }
+    
     var updateSearch: ((WeatherModel) -> Void)? { get set }
-    //var updateForecast: ((Forecast) -> Void)? { get set }
     
     func fetchWeatherData(cityName: String)
     func convertDateString(_ dateString: String) -> String
     func getHighestTemp(model: WeatherModel) -> Void
+    func getFirstFiveWeatherInfo(model: WeatherModel) -> [FirstFiveWeatherModel]
 }
 
 class WeatherViewModel: WeatherViewModelType {
     
     var weekWeather: [WeekWeatherModel] = []
+    
+    var firstFiveWeather: [FirstFiveWeatherModel] = []
     
     private var weatherService: WeatherService!
     
@@ -39,22 +41,9 @@ class WeatherViewModel: WeatherViewModelType {
     var bindWeatherViewModelToController : (() -> Void) = {}
     
     
-
-    /*
-    lazy var didTapSearch: (() -> Void)? = { [weak self] in
-        self?.updateSearch?(self?.weatherData ?? Weather(name: "", weather: [], main: MainInfo(temp: 0.0, humidity: 0), wind: WindInfo(speed: 0.0), dt_txt: ""))
-    }
-     
-     
-     lazy var didTapSearch: (() -> Void)? = { [weak self] in
-         self?.updateSearch?(self?.weatherData ?? WeatherModel(list: [], city: CityDetail(name: "")))
-     }
-    */
-    
     init() {
         self.weatherService = WeatherService()
         fetchWeatherData(cityName: "Marbella") // Получение данных о погоде для Лондона
-        //fetchWeekWeatherData(cityName: "London") // Получение прогноза погоды на неделю для Лондона
     }
 
     func fetchWeatherData(cityName: String) {
@@ -64,6 +53,7 @@ class WeatherViewModel: WeatherViewModelType {
             
             // Вызываем метод для обновления weekWeather
             self?.getHighestTemp(model: weatherData)
+            self?.getFirstFiveWeatherInfo(model: weatherData)
         }
     }
     
@@ -95,6 +85,42 @@ class WeatherViewModel: WeatherViewModelType {
         }
         print(weekWeather)
     }
+    
+    
+    func getFirstFiveWeatherInfo(model: WeatherModel) -> [FirstFiveWeatherModel] {
+        var weatherInfo: [FirstFiveWeatherModel] = []
+        
+        guard let weatherList = model.list else {
+            print("Weather list is nil")
+            return weatherInfo
+        }
+        
+        let sortedWeatherList = weatherList.sorted { $0.dt_txt < $1.dt_txt }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        for weatherDetail in sortedWeatherList.prefix(5) {
+            guard let date = dateFormatter.date(from: weatherDetail.dt_txt) else {
+                continue
+            }
+            
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "HH:mm"
+            let time = timeFormatter.string(from: date)
+            
+            let temperature = Int(weatherDetail.main.temp)
+            let icon = weatherDetail.weather.first?.icon ?? ""
+            
+            let weatherModel = FirstFiveWeatherModel(time: time, temp: temperature, icon: icon)
+            weatherInfo.append(weatherModel)
+        }
+        
+        print("First five weather info: \(weatherInfo)")
+        return weatherInfo
+    }
+
+
     
     func dayOfWeek(from dateString: String) -> String? {
         let dateFormatter = DateFormatter()
