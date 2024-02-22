@@ -30,6 +30,8 @@ class WeatherViewController: UIViewController {
         view = mainView
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Присваиваем замыкание weatherViewModel.updateSearch

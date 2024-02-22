@@ -18,27 +18,6 @@ class SearchView: UIView {
         return button
     }()
     
-    /* let searchField: UITextField = {
-     let textField = UITextField()
-     textField.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1.0)
-     //textField.placeholder = "SEARCH LOCATION"
-     textField.textColor = .black
-     textField.layer.cornerRadius = 22
-     textField.translatesAutoresizingMaskIntoConstraints = false
-     return textField
-     }()
-     
-     let searchButton: UIButton = {
-     let button = UIButton()
-     //        button.setTitle("Search", for: .normal)
-     button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-     button.setTitleColor(.white, for: .normal)
-     button.backgroundColor = .clear
-     button.layer.cornerRadius = 22
-     button.translatesAutoresizingMaskIntoConstraints = false
-     return button
-     }()
-     */
     
     lazy var searchView: UIView = {
         let searchView = UIView()
@@ -64,7 +43,6 @@ class SearchView: UIView {
         let button = UIButton()
         button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         button.contentMode = .scaleAspectFit
-        //button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -98,8 +76,6 @@ class SearchView: UIView {
     func setupViews(){
         backgroundView.addSubview(closeButton)
         addSubview(backgroundView)
-        //addSubview(searchField)
-        //searchField.addSubview(searchButton)
         addSubview(searchView)
         searchView.addSubview(textField)
         searchView.addSubview(searchButton)

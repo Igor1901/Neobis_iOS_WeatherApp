@@ -48,6 +48,7 @@ class WeatherViewModel: WeatherViewModelType {
 
     func fetchWeatherData(cityName: String) {
         weatherService.fetchWeather(city: cityName) { [weak self] weatherData in
+            self?.weatherData = weatherData // Устанавливаем новые данные о погоде
             // Вызываем замыкание updateSearch с полученными данными
             self?.updateSearch?(weatherData)
             
@@ -88,8 +89,8 @@ class WeatherViewModel: WeatherViewModelType {
     
     
     func getFirstFiveWeatherInfo(model: WeatherModel) -> [FirstFiveWeatherModel] {
-
         
+        firstFiveWeather.removeAll()
         guard let weatherList = model.list else {
             print("Weather list is nil")
             return firstFiveWeather

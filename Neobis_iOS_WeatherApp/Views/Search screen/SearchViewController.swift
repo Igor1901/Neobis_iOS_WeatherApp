@@ -53,6 +53,9 @@ class SearchViewController: UIViewController {
         
         weatherViewModel.fetchWeatherData(cityName: cityName)
         //weatherViewModel.fetchWeekWeatherData(cityName: cityName)
+        
+        
+        
         dismiss(animated: true) { [weak self] in
             self?.mainViewController?.weatherViewModel.firstFiveWeather
             self?.mainViewController?.weatherViewModel.weekWeather

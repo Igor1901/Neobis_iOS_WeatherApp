@@ -15,6 +15,7 @@ class SecondWeatherViewController: UIViewController {
     var viewModel: WeatherViewModelType!
     let secondView = SecondUIView()
     
+    var weatherViewModel: WeatherViewModelType!
     
     init(_ vm: WeatherViewModelType) {
         super.init(nibName: nil, bundle: nil)
@@ -58,6 +59,13 @@ class SecondWeatherViewController: UIViewController {
     @objc func backPressed() {
         dismiss(animated: true)
     }
+    
+    func fillData(with data: WeatherModel) {
+        
+        secondView.secondDateLabel.text = "\(weatherViewModel.convertDateString(data.list?[0].dt_txt ?? "26 Апреля"))"
+        
+    }
+    
 }
 
 //MARK: CollectionView extension
